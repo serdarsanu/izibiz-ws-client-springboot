@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: izibiz-client
+Implementation-Version: 0.0.1
+Built-By: asesa
+Implementation-Vendor-Id: com.edonusum.izibiz.ws.client
+Build-Jdk: 1.8.0_231
+Implementation-URL: http://projects.spring.io/spring-boot/izibiz-clien
+ t/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

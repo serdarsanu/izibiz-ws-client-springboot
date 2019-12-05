@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.i2i.com/ei/wsdl" xmlns:gib1="http://gib.gov.tr/vedop3/eFatura" name="CreditNoteService" targetNamespace="http://schemas.i2i.com/ei/wsdl">
+
+	<!-- TYPES -->
+	<wsdl:types>
+		<xsd:schema>
+			<xsd:import namespace="http://schemas.i2i.com/ei/wsdl" schemaLocation="https://efaturatest.izibiz.com.tr:443/CreditNoteWS/CreditNote?xsd=1"/>
+		</xsd:schema>
+	</wsdl:types>
+
+	<!-- MESSAGES -->
+	<wsdl:message name="LoadCreditNoteRequestMessage">
+		<wsdl:part name="request" element="tns:LoadCreditNoteRequest"/>
+	</wsdl:message>
+	<wsdl:message name="LoadCreditNoteResponseMessage">
+		<wsdl:part name="response" element="tns:LoadCreditNoteResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="SendCreditNoteRequestMessage">
+		<wsdl:part name="request" element="tns:SendCreditNoteRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SendCreditNoteResponseMessage">
+		<wsdl:part name="response" element="tns:SendCreditNoteResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="GetCreditNoteStatusRequestMessage">
+		<wsdl:part name="request" element="tns:GetCreditNoteStatusRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetCreditNoteStatusResponseMessage">
+		<wsdl:part name="response" element="tns:GetCreditNoteStatusResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="CancelCreditNoteRequestMessage">
+		<wsdl:part name="request" element="tns:CancelCreditNoteRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CancelCreditNoteResponseMessage">
+		<wsdl:part name="response" element="tns:CancelCreditNoteResponse"/>
+	</wsdl:message>
+	
+
+	<wsdl:message name="GetCreditNoteRequestMessage">
+		<wsdl:part name="request" element="tns:GetCreditNoteRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetCreditNoteResponseMessage">
+		<wsdl:part name="response" element="tns:GetCreditNoteResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="GetCreditNoteReportRequestMessage">
+		<wsdl:part name="request" element="tns:GetCreditNoteReportRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetCreditNoteReportResponseMessage">
+		<wsdl:part name="response" element="tns:GetCreditNoteReportResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="MarkCreditNoteRequestMessage">
+		<wsdl:part name="request" element="tns:MarkCreditNoteRequest"/>
+	</wsdl:message>
+	<wsdl:message name="MarkCreditNoteResponseMessage">
+		<wsdl:part name="response" element="tns:MarkCreditNoteResponse"/>
+	</wsdl:message>
+
+	<!-- FAULT -->
+	<wsdl:message name="RequestFaultMessage">
+		<wsdl:part name="parameters" element="tns:RequestFault"/>
+	</wsdl:message>
+
+
+	<!-- PORT -->
+	<wsdl:portType name="CreditNoteServicePort">
+		<!-- CREDITNOTE OPERATIONS -->
+		<wsdl:operation name="LoadCreditNote">
+			<wsdl:input message="tns:LoadCreditNoteRequestMessage"/>
+			<wsdl:output message="tns:LoadCreditNoteResponseMessage"/>
+			<wsdl:fault name="RequestFault" message="tns:RequestFaultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="SendCreditNote">
+			<wsdl:input message="tns:SendCreditNoteRequestMessage"/>
+			<wsdl:output message="tns:SendCreditNoteResponseMessage"/>
+			<wsdl:fault name="RequestFault" message="tns:RequestFaultMessage"/>
+		</wsdl:operation>
+			<wsdl:operation name="GetCreditNoteStatus">
+			<wsdl:input message="tns:GetCreditNoteStatusRequestMessage"/>
+			<wsdl:output message="tns:GetCreditNoteStatusResponseMessage"/>
+			<wsdl:fault name="RequestFault" message="tns:RequestFaultMessage"/>
+		</wsdl:operation>		
+		<wsdl:operation name="CancelCreditNote">
+			<wsdl:input message="tns:CancelCreditNoteRequestMessage"/>
+			<wsdl:output message="tns:CancelCreditNoteResponseMessage"/>
+			<wsdl:fault name="RequestFault" message="tns:RequestFaultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetCreditNote">
+			<wsdl:input message="tns:GetCreditNoteRequestMessage"/>
+			<wsdl:output message="tns:GetCreditNoteResponseMessage"/>
+			<wsdl:fault name="RequestFault" message="tns:RequestFaultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetCreditNoteReport">
+			<wsdl:input message="tns:GetCreditNoteReportRequestMessage"/>
+			<wsdl:output message="tns:GetCreditNoteReportResponseMessage"/>
+			<wsdl:fault name="RequestFault" message="tns:RequestFaultMessage"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="MarkCreditNote">
+			<wsdl:input message="tns:MarkCreditNoteRequestMessage"/>
+			<wsdl:output message="tns:MarkCreditNoteResponseMessage"/>
+			<wsdl:fault name="RequestFault" message="tns:RequestFaultMessage"/>
+		</wsdl:operation>
+		
+		<!-- USER OPERATIONS -->
+	</wsdl:portType>
+
+	<!-- BINDING -->
+	<wsdl:binding name="CreditNotePortBinding" type="tns:CreditNoteServicePort">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="LoadCreditNote">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="RequestFault">
+				<soap:fault name="RequestFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SendCreditNote">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="RequestFault">
+				<soap:fault name="RequestFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+			<wsdl:operation name="GetCreditNoteStatus">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="RequestFault">
+				<soap:fault name="RequestFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CancelCreditNote">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="RequestFault">
+				<soap:fault name="RequestFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetCreditNote">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="RequestFault">
+				<soap:fault name="RequestFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetCreditNoteReport">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="RequestFault">
+				<soap:fault name="RequestFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="MarkCreditNote">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="RequestFault">
+				<soap:fault name="RequestFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+	</wsdl:binding>
+
+	<!-- SERVICE -->
+	<wsdl:service name="CreditNoteWS">
+		<wsdl:port name="CreditNotePort" binding="tns:CreditNotePortBinding">
+			<soap:address location="https://efaturatest.izibiz.com.tr:443/CreditNoteWS/CreditNote"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

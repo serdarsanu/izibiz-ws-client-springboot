@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.i2i.com/ei/wsdl" xmlns:gib1="http://gib.gov.tr/vedop3/eFatura" name="SmmService" targetNamespace="http://schemas.i2i.com/ei/wsdl">
+
+	<!-- TYPES -->
+	<wsdl:types>
+		<xsd:schema>
+			<xsd:import namespace="http://schemas.i2i.com/ei/wsdl" schemaLocation="https://efaturatest.izibiz.com.tr:443/SmmWS?xsd=4"/>
+		</xsd:schema>
+	</wsdl:types>
+
+	<!-- MESSAGES -->
+	<wsdl:message name="LoadSmmRequestMessage">
+		<wsdl:part name="request" element="tns:LoadSmmRequest"/>
+	</wsdl:message>
+	<wsdl:message name="LoadSmmResponseMessage">
+		<wsdl:part name="response" element="tns:LoadSmmResponse"/>
+	</wsdl:message>
+
+	<wsdl:message name="SendSmmRequestMessage">
+		<wsdl:part name="request" element="tns:SendSmmRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SendSmmResponseMessage">
+		<wsdl:part name="response" element="tns:SendSmmResponse"/>
+	</wsdl:message>
+
+	<wsdl:message name="GetSmmRequestMessage">
+		<wsdl:part name="request" element="tns:GetSmmRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetSmmResponseMessage">
+		<wsdl:part name="response" element="tns:GetSmmResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="GetSmmStatusRequestMessage">
+		<wsdl:part name="request" element="tns:GetSmmStatusRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetSmmStatusResponseMessage">
+		<wsdl:part name="response" element="tns:GetSmmStatusResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="CancelSmmRequestMessage">
+		<wsdl:part name="request" element="tns:CancelSmmRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CancelSmmResponseMessage">
+		<wsdl:part name="response" element="tns:CancelSmmResponse"/>
+	</wsdl:message>
+
+	<wsdl:message name="GetSmmReportRequestMessage">
+		<wsdl:part name="request" element="tns:GetSmmReportRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetSmmReportResponseMessage">
+		<wsdl:part name="response" element="tns:GetSmmReportResponse"/>
+	</wsdl:message>
+	
+	<!-- FAULT -->
+	<wsdl:message name="RequestFaultMessage">
+		<wsdl:part name="parameters" element="tns:RequestFault"/>
+	</wsdl:message>
+
+
+	<!-- PORT -->
+	<wsdl:portType name="SmmServicePort">
+		<!-- DESPATCH OPERATIONS -->
+		<wsdl:operation name="LoadSmm">
+			<wsdl:input message="tns:LoadSmmRequestMessage"/>
+			<wsdl:output message="tns:LoadSmmResponseMessage"/>
+			<wsdl:fault name="RequestFault" message="tns:RequestFaultMessage"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="SendSmm">
+			<wsdl:input message="tns:SendSmmRequestMessage"/>
+			<wsdl:output message="tns:SendSmmResponseMessage"/>
+			<wsdl:fault name="RequestFault" message="tns:RequestFaultMessage"/>
+		</wsdl:operation>
+		
+
+		<wsdl:operation name="GetSmm">
+			<wsdl:input message="tns:GetSmmRequestMessage"/>
+			<wsdl:output message="tns:GetSmmResponseMessage"/>
+			<wsdl:fault name="RequestFault" message="tns:RequestFaultMessage"/>
+		</wsdl:operation>
+		
+		
+		<wsdl:operation name="GetSmmStatus">
+			<wsdl:input message="tns:GetSmmStatusRequestMessage"/>
+			<wsdl:output message="tns:GetSmmStatusResponseMessage"/>
+			<wsdl:fault name="RequestFault" message="tns:RequestFaultMessage"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="CancelSmm">
+			<wsdl:input message="tns:CancelSmmRequestMessage"/>
+			<wsdl:output message="tns:CancelSmmResponseMessage"/>
+			<wsdl:fault name="RequestFault" message="tns:RequestFaultMessage"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="GetSmmReport">
+			<wsdl:input message="tns:GetSmmReportRequestMessage"/>
+			<wsdl:output message="tns:GetSmmReportResponseMessage"/>
+			<wsdl:fault name="RequestFault" message="tns:RequestFaultMessage"/>
+		</wsdl:operation>
+		<!-- USER OPERATIONS -->
+	</wsdl:portType>
+
+	<!-- BINDING -->
+	<wsdl:binding name="SmmPortBinding" type="tns:SmmServicePort">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+	<wsdl:operation name="LoadSmm">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="RequestFault">
+				<soap:fault name="RequestFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SendSmm">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="RequestFault">
+				<soap:fault name="RequestFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetSmm">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="RequestFault">
+				<soap:fault name="RequestFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetSmmStatus">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="RequestFault">
+				<soap:fault name="RequestFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CancelSmm">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="RequestFault">
+				<soap:fault name="RequestFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetSmmReport">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="RequestFault">
+				<soap:fault name="RequestFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+
+	<!-- SERVICE -->
+	<wsdl:service name="SmmWS">
+		<wsdl:port name="SmmPort" binding="tns:SmmPortBinding">
+			<soap:address location="https://efaturatest.izibiz.com.tr:443/SmmWS"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

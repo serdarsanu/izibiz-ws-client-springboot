@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.i2i.com/ei/wsdl" xmlns:gib1="http://gib.gov.tr/vedop3/eFatura" name="ZReportService" targetNamespace="http://schemas.i2i.com/ei/wsdl">
+
+	<!-- TYPES -->
+	<wsdl:types>
+		<xsd:schema>
+			<xsd:import namespace="http://schemas.i2i.com/ei/wsdl" schemaLocation="https://efaturatest.izibiz.com.tr:443/ZReportWS?xsd=4"/>
+		</xsd:schema>
+	</wsdl:types>
+
+	<!-- MESSAGES -->
+	<wsdl:message name="LoadZReportRequestMessage">
+		<wsdl:part name="request" element="tns:LoadZReportRequest"/>
+	</wsdl:message>
+	<wsdl:message name="LoadZReportResponseMessage">
+		<wsdl:part name="response" element="tns:LoadZReportResponse"/>
+	</wsdl:message>
+
+	<wsdl:message name="CancelZReportRequestMessage">
+		<wsdl:part name="request" element="tns:CancelZReportRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CancelZReportResponseMessage">
+		<wsdl:part name="response" element="tns:CancelZReportResponse"/>
+	</wsdl:message>
+
+	<wsdl:message name="GetZReportRequestMessage">
+		<wsdl:part name="request" element="tns:GetZReportRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetZReportResponseMessage">
+		<wsdl:part name="response" element="tns:GetZReportResponse"/>
+	</wsdl:message>
+
+	<wsdl:message name="GetZReportStatusRequestMessage">
+		<wsdl:part name="request" element="tns:GetZReportStatusRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetZReportStatusResponseMessage">
+		<wsdl:part name="response" element="tns:GetZReportStatusResponse"/>
+	</wsdl:message>
+
+	<!-- FAULT -->
+	<wsdl:message name="RequestFaultMessage">
+		<wsdl:part name="parameters" element="tns:RequestFault"/>
+	</wsdl:message>
+
+
+	<!-- PORT -->
+	<wsdl:portType name="ZReportServicePort">
+		<wsdl:operation name="LoadZReport">
+			<wsdl:input message="tns:LoadZReportRequestMessage"/>
+			<wsdl:output message="tns:LoadZReportResponseMessage"/>
+			<wsdl:fault name="RequestFault" message="tns:RequestFaultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="CancelZReport">
+			<wsdl:input message="tns:CancelZReportRequestMessage"/>
+			<wsdl:output message="tns:CancelZReportResponseMessage"/>
+			<wsdl:fault name="RequestFault" message="tns:RequestFaultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetZReport">
+			<wsdl:input message="tns:GetZReportRequestMessage"/>
+			<wsdl:output message="tns:GetZReportResponseMessage"/>
+			<wsdl:fault name="RequestFault" message="tns:RequestFaultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetZReportStatus">
+			<wsdl:input message="tns:GetZReportStatusRequestMessage"/>
+			<wsdl:output message="tns:GetZReportStatusResponseMessage"/>
+			<wsdl:fault name="RequestFault" message="tns:RequestFaultMessage"/>
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<!-- BINDING -->
+	<wsdl:binding name="ZReportPortBinding" type="tns:ZReportServicePort">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="LoadZReport">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="RequestFault">
+				<soap:fault name="RequestFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="CancelZReport">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="RequestFault">
+				<soap:fault name="RequestFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="GetZReport">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="RequestFault">
+				<soap:fault name="RequestFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="GetZReportStatus">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="RequestFault">
+				<soap:fault name="RequestFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+
+	<!-- SERVICE -->
+	<wsdl:service name="ZReportWS">
+		<wsdl:port name="ZReportPort" binding="tns:ZReportPortBinding">
+			<soap:address location="https://efaturatest.izibiz.com.tr:443/ZReportWS"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
